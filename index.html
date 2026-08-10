@@ -8,6 +8,12 @@
   <title>김승원 | Design & Web Development</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .row-icon.brand-logo { padding: 4px; overflow: hidden; }
+    .row-icon.brand-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .row-icon.brand-logo .logo-fallback { display: none; place-items: center; width: 100%; height: 100%; }
+    .row-icon.brand-logo.qoo10-logo img { transform: scale(1.35); }
+  </style>
 </head>
 <body>
   <main class="page-shell" id="top">
@@ -47,7 +53,10 @@
           </div>
         </article>
         <article class="row-item">
-          <div class="row-icon">Q10</div>
+          <div class="row-icon brand-logo qoo10-logo" aria-label="Qoo10 로고">
+            <img src="./assets/logos/qoo10.png" alt="Qoo10" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+            <span class="logo-fallback">Q10</span>
+          </div>
           <div class="row-main">
             <div class="row-title"><strong>Qoo10</strong><span>2014.01 — 2014.08</span></div>
             <div class="row-sub">QA · 서비스 기획 지원</div>
@@ -60,7 +69,10 @@
     <section class="section reveal" id="education">
       <h2>Education</h2>
       <article class="row-item compact">
-        <div class="row-icon">SH</div>
+        <div class="row-icon brand-logo" aria-label="신한대학교 로고">
+          <img src="./assets/logos/shinhan-university.png" alt="신한대학교" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+          <span class="logo-fallback">SH</span>
+        </div>
         <div class="row-main">
           <div class="row-title"><strong>신한대학교</strong><span>2011.03 — 2018.03</span></div>
           <div class="row-sub">산업디자인과 · 학사</div>
@@ -79,12 +91,12 @@
       <div class="section-divider"><span></span><b>My Projects</b><span></span></div>
       <div class="projects-heading">
         <h2>제품을 상품으로 만든 작업들</h2>
-        <p>카드를 클릭하면 시각물을 크게 볼 수 있습니다.</p>
+        <p>카드를 클릭하면 전체 상세페이지 또는 라이브 페이지를 볼 수 있습니다.</p>
       </div>
 
       <div class="project-grid">
-        <article class="project-card" role="button" tabindex="0" data-title="초경량 5단 우양산" data-image="./assets/umbrella5-hero.webp">
-          <div class="project-media"><img src="./assets/umbrella5-hero.webp" alt="다나코리아 초경량 5단 우양산" /></div>
+        <article class="project-card" role="button" tabindex="0" data-title="초경량 5단 우양산" data-gallery="umbrella5">
+          <div class="project-media"><img src="./assets/umbrella-5/02.jpg" alt="다나코리아 초경량 5단 우양산" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>초경량 5단 우양산</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>220g 초경량과 우산·양산 2WAY 특성을 핵심 판매 포인트로 정의하고, 상품 콘셉트부터 카피·AI 비주얼·상세페이지 전체 디자인까지 진행했습니다.</p>
@@ -92,8 +104,8 @@
           </div>
         </article>
 
-        <article class="project-card" role="button" tabindex="0" data-title="데일리 3단 우산" data-image="./assets/umbrella3-hero.webp">
-          <div class="project-media"><img src="./assets/umbrella3-hero.webp" alt="다나코리아 데일리 3단 우산" /></div>
+        <article class="project-card" role="button" tabindex="0" data-title="데일리 3단 우산" data-gallery="umbrella3">
+          <div class="project-media"><img src="./assets/umbrella-3/03.jpg" alt="다나코리아 데일리 3단 우산" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>데일리 3단 우산</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>저렴함만 강조하지 않고 ‘합리적인 가격에 기본기를 갖춘 데일리 우산’으로 포지셔닝해 무게·프레임·원단·휴대성을 중심으로 구매 정보를 설계했습니다.</p>
@@ -101,14 +113,32 @@
           </div>
         </article>
 
-        <article class="project-card" role="button" tabindex="0" data-title="클린백 생활 위생 처리봉투" data-image="./assets/cleanbag-hero.webp">
-          <div class="project-media"><img src="./assets/cleanbag-hero.webp" alt="클린백 생활 위생 처리봉투" /></div>
+        <article class="project-card" role="button" tabindex="0" data-title="클린백 생활 위생 처리봉투" data-gallery="cleanbag">
+          <div class="project-media"><img src="./assets/cleanbag/02.jpg" alt="클린백 생활 위생 처리봉투" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>클린백 생활 위생 처리봉투</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>기저귀·반려동물 배변·여행 및 차량용까지 사용 상황을 확장하고 패키지, 상세페이지, 런칭 프로모션을 하나의 판매 구조로 구성했습니다.</p>
             <div class="tags"><span>Productization</span><span>Package</span><span>Detail Page</span><span>Promotion</span></div>
           </div>
         </article>
+
+        <a class="project-card" href="https://pickitsme.com/mr/lentigo_evt_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 렌티고 이벤트 랜딩페이지 열기" style="color:inherit;text-decoration:none">
+          <div class="project-media"><img src="https://winawork.github.io/images/itsme/lentigo_02.png" alt="잇츠미의원 대전 렌티고 이벤트 랜딩페이지" /></div>
+          <div class="project-body">
+            <div class="project-top"><div><h3>렌티고 이벤트 랜딩페이지</h3><time>Live · 잇츠미의원 대전</time></div><span class="arrow" aria-hidden="true">↗</span></div>
+            <p>기미·잡티 고민 고객을 위한 이벤트 랜딩페이지로, 시술 정보와 상담 전환 흐름을 한 페이지에 설계했습니다.</p>
+            <div class="tags"><span>Landing Page</span><span>Medical Marketing</span><span>Web Design</span></div>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://pickitsme.com/mr/onda_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 온다 리프팅 랜딩페이지 열기" style="color:inherit;text-decoration:none">
+          <div class="project-media"><img src="https://winawork.github.io/images/itsme/new_onda_01.jpg" alt="잇츠미의원 대전 온다 리프팅 랜딩페이지" /></div>
+          <div class="project-body">
+            <div class="project-top"><div><h3>온다 리프팅 랜딩페이지</h3><time>Live · 잇츠미의원 대전</time></div><span class="arrow" aria-hidden="true">↗</span></div>
+            <p>온다 리프팅의 원리와 기대 효과, 시술 대상 정보를 단계적으로 구성한 의료 마케팅 랜딩페이지입니다.</p>
+            <div class="tags"><span>Landing Page</span><span>Medical Marketing</span><span>Web Design</span></div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -133,29 +163,41 @@
         <strong id="modalTitle"></strong>
         <button class="modal-close" type="button" aria-label="닫기">×</button>
       </div>
-      <div class="modal-visual"><img id="modalImage" src="" alt="" /></div>
+      <div class="modal-visual" id="modalVisual"></div>
     </div>
   </div>
 
   <script>
     const modal = document.getElementById('visualModal');
-    const modalImage = document.getElementById('modalImage');
+    const modalVisual = document.getElementById('modalVisual');
     const modalTitle = document.getElementById('modalTitle');
+    const numbers = (from, to) => Array.from({ length: to - from + 1 }, (_, index) => index + from);
+    const detailPages = {
+      umbrella5: numbers(2, 12).map((number) => `umbrella-5/${String(number).padStart(2, '0')}.jpg`),
+      umbrella3: numbers(3, 11).map((number) => `umbrella-3/${String(number).padStart(2, '0')}.jpg`),
+      cleanbag: numbers(2, 16).map((number) => `cleanbag/${String(number).padStart(2, '0')}.jpg`),
+    };
+    const assetUrl = (path) => `./assets/${path.split('/').map(encodeURIComponent).join('/')}`;
     const closeModal = () => {
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
-      modalImage.src = '';
+      modalVisual.replaceChildren();
     };
     const openModal = (card) => {
       modalTitle.textContent = card.dataset.title || '';
-      modalImage.src = card.dataset.image || '';
-      modalImage.alt = card.dataset.title || '프로젝트 시각물';
+      const images = detailPages[card.dataset.gallery] || [];
+      modalVisual.replaceChildren(...images.map((path, index) => {
+        const image = new Image();
+        image.src = assetUrl(path);
+        image.alt = `${card.dataset.title || '프로젝트'} 상세페이지 ${index + 1}`;
+        return image;
+      }));
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
     };
-    document.querySelectorAll('.project-card').forEach((card) => {
+    document.querySelectorAll('.project-card[data-gallery]').forEach((card) => {
       card.addEventListener('click', () => openModal(card));
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
