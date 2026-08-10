@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main class="page-shell">
+  <main class="page-shell" id="top">
     <section class="hero reveal">
       <div class="hero-copy">
         <h1>안녕하세요, 김승원입니다.</h1>
@@ -79,14 +79,12 @@
       <div class="section-divider"><span></span><b>My Projects</b><span></span></div>
       <div class="projects-heading">
         <h2>제품을 상품으로 만든 작업들</h2>
-        <p>기획부터 콘텐츠 구조, 이미지 제작, 상세페이지와 패키지까지 직접 진행한 최근 프로젝트입니다.</p>
+        <p>카드를 클릭하면 시각물을 크게 볼 수 있습니다.</p>
       </div>
 
       <div class="project-grid">
-        <article class="project-card">
-          <div class="project-media">
-            <img src="https://raw.githubusercontent.com/winawon02/portfolio-2026/main/assets/umbrella5-hero.webp" alt="다나코리아 초경량 5단 우양산" />
-          </div>
+        <article class="project-card" role="button" tabindex="0" data-title="초경량 5단 우양산" data-image="./assets/umbrella5-hero.webp">
+          <div class="project-media"><img src="./assets/umbrella5-hero.webp" alt="다나코리아 초경량 5단 우양산" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>초경량 5단 우양산</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>220g 초경량과 우산·양산 2WAY 특성을 핵심 판매 포인트로 정의하고, 상품 콘셉트부터 카피·AI 비주얼·상세페이지 전체 디자인까지 진행했습니다.</p>
@@ -94,10 +92,8 @@
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-media">
-            <img src="https://raw.githubusercontent.com/winawon02/portfolio-2026/main/assets/umbrella3-hero.webp" alt="다나코리아 데일리 3단 우산" />
-          </div>
+        <article class="project-card" role="button" tabindex="0" data-title="데일리 3단 우산" data-image="./assets/umbrella3-hero.webp">
+          <div class="project-media"><img src="./assets/umbrella3-hero.webp" alt="다나코리아 데일리 3단 우산" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>데일리 3단 우산</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>저렴함만 강조하지 않고 ‘합리적인 가격에 기본기를 갖춘 데일리 우산’으로 포지셔닝해 무게·프레임·원단·휴대성을 중심으로 구매 정보를 설계했습니다.</p>
@@ -105,10 +101,8 @@
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-media">
-            <img src="https://raw.githubusercontent.com/winawon02/portfolio-2026/main/assets/cleanbag-hero.webp" alt="클린백 생활 위생 처리봉투" />
-          </div>
+        <article class="project-card" role="button" tabindex="0" data-title="클린백 생활 위생 처리봉투" data-image="./assets/cleanbag-hero.webp">
+          <div class="project-media"><img src="./assets/cleanbag-hero.webp" alt="클린백 생활 위생 처리봉투" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>클린백 생활 위생 처리봉투</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>기저귀·반려동물 배변·여행 및 차량용까지 사용 상황을 확장하고 패키지, 상세페이지, 런칭 프로모션을 하나의 판매 구조로 구성했습니다.</p>
@@ -131,5 +125,45 @@
     <span class="dock-sep"></span>
     <a href="https://github.com/winawon02" target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub">GH</a>
   </nav>
+
+  <div class="visual-modal" id="visualModal" aria-hidden="true">
+    <button class="modal-backdrop" type="button" aria-label="닫기"></button>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <strong id="modalTitle"></strong>
+        <button class="modal-close" type="button" aria-label="닫기">×</button>
+      </div>
+      <div class="modal-visual"><img id="modalImage" src="" alt="" /></div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('visualModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModal = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      modalImage.src = '';
+    };
+    const openModal = (card) => {
+      modalTitle.textContent = card.dataset.title || '';
+      modalImage.src = card.dataset.image || '';
+      modalImage.alt = card.dataset.title || '프로젝트 시각물';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    };
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('click', () => openModal(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+      });
+    });
+    document.querySelector('.modal-close').addEventListener('click', closeModal);
+    document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
 </body>
 </html>
