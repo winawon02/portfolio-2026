@@ -13,6 +13,18 @@
     .row-icon.brand-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .row-icon.brand-logo .logo-fallback { display: none; place-items: center; width: 100%; height: 100%; }
     .row-icon.brand-logo.qoo10-logo img { transform: scale(1.35); }
+    @media (min-width: 701px) {
+      .projects-section { width: min(100vw - 64px, 1320px); margin-left: 50%; transform: translateX(-50%); }
+      .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .project-card { opacity: .72; transition: box-shadow .2s ease, transform .2s ease, opacity .2s ease; }
+      .project-card:hover, .project-card:focus-visible { opacity: 1; }
+      .modal-panel { width: min(94vw, 740px); }
+    }
+    @media (max-width: 700px) {
+      .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-media { height: 164px; }
+      .project-body { padding: 16px; }
+    }
   </style>
 </head>
 <body>
