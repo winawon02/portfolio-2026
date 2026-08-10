@@ -13,6 +13,7 @@
     .row-icon.brand-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .row-icon.brand-logo .logo-fallback { display: none; place-items: center; width: 100%; height: 100%; }
     .row-icon.brand-logo.qoo10-logo img { transform: scale(1.35); }
+    .project-media { aspect-ratio: 4 / 3; height: auto; }
     @media (min-width: 701px) {
       .projects-section { width: min(100vw - 64px, 1320px); margin-left: calc((100% - min(100vw - 64px, 1320px)) / 2); }
       .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -22,7 +23,7 @@
     }
     @media (max-width: 700px) {
       .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .project-media { height: 164px; }
+      .project-media { height: auto; }
       .project-body { padding: 16px; }
     }
   </style>
@@ -108,7 +109,7 @@
 
       <div class="project-grid">
         <article class="project-card" role="button" tabindex="0" data-title="초경량 5단 우양산" data-gallery="umbrella5">
-          <div class="project-media"><img src="./assets/umbrella-5/02.jpg" alt="다나코리아 초경량 5단 우양산" /></div>
+          <div class="project-media"><img src="./assets/thumbnails/umbrella-5.png" alt="다나코리아 초경량 5단 우양산" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>초경량 5단 우양산</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>220g 초경량과 우산·양산 2WAY 특성을 핵심 판매 포인트로 정의하고, 상품 콘셉트부터 카피·AI 비주얼·상세페이지 전체 디자인까지 진행했습니다.</p>
@@ -117,7 +118,7 @@
         </article>
 
         <article class="project-card" role="button" tabindex="0" data-title="데일리 3단 우산" data-gallery="umbrella3">
-          <div class="project-media"><img src="./assets/umbrella-3/03.jpg" alt="다나코리아 데일리 3단 우산" /></div>
+          <div class="project-media"><img src="./assets/thumbnails/umbrella-3.png" alt="다나코리아 데일리 3단 우산" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>데일리 3단 우산</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>저렴함만 강조하지 않고 ‘합리적인 가격에 기본기를 갖춘 데일리 우산’으로 포지셔닝해 무게·프레임·원단·휴대성을 중심으로 구매 정보를 설계했습니다.</p>
@@ -126,7 +127,7 @@
         </article>
 
         <article class="project-card" role="button" tabindex="0" data-title="클린백 생활 위생 처리봉투" data-gallery="cleanbag">
-          <div class="project-media"><img src="./assets/cleanbag/02.jpg" alt="클린백 생활 위생 처리봉투" /></div>
+          <div class="project-media"><img src="./assets/thumbnails/cleanbag.png" alt="클린백 생활 위생 처리봉투" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>클린백 생활 위생 처리봉투</h3><time>2026 · Dana Korea</time></div><span class="arrow">↗</span></div>
             <p>기저귀·반려동물 배변·여행 및 차량용까지 사용 상황을 확장하고 패키지, 상세페이지, 런칭 프로모션을 하나의 판매 구조로 구성했습니다.</p>
@@ -135,7 +136,7 @@
         </article>
 
         <a class="project-card" href="https://pickitsme.com/mr/lentigo_evt_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 렌티고 이벤트 랜딩페이지 열기" style="color:inherit;text-decoration:none">
-          <div class="project-media"><img src="https://winawork.github.io/images/itsme/lentigo_02.png" alt="잇츠미의원 대전 렌티고 이벤트 랜딩페이지" /></div>
+          <div class="project-media"><img src="./assets/thumbnails/itsme-lentigo.png" alt="잇츠미의원 대전 렌티고 이벤트 랜딩페이지" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>렌티고 이벤트 랜딩페이지</h3><time>Live · 잇츠미의원 대전</time></div><span class="arrow" aria-hidden="true">↗</span></div>
             <p>기미·잡티 고민 고객을 위한 이벤트 랜딩페이지로, 시술 정보와 상담 전환 흐름을 한 페이지에 설계했습니다.</p>
@@ -144,7 +145,7 @@
         </a>
 
         <a class="project-card" href="https://pickitsme.com/mr/onda_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 온다 리프팅 랜딩페이지 열기" style="color:inherit;text-decoration:none">
-          <div class="project-media"><img src="https://winawork.github.io/images/itsme/new_onda_01.jpg" alt="잇츠미의원 대전 온다 리프팅 랜딩페이지" /></div>
+          <div class="project-media"><img src="./assets/thumbnails/itsme-onda.png" alt="잇츠미의원 대전 온다 리프팅 랜딩페이지" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>온다 리프팅 랜딩페이지</h3><time>Live · 잇츠미의원 대전</time></div><span class="arrow" aria-hidden="true">↗</span></div>
             <p>온다 리프팅의 원리와 기대 효과, 시술 대상 정보를 단계적으로 구성한 의료 마케팅 랜딩페이지입니다.</p>
