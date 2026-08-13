@@ -26,6 +26,12 @@
     .modal-metric span { display: block; color: #71717a; font-size: 10px; line-height: 1.3; }
     .modal-metric strong { display: block; margin-top: 3px; color: #18181b; font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
     .modal-summary.has-metrics + .modal-visual { max-height: calc(92vh - 207px); }
+    .modal-head-actions { display: flex; align-items: center; gap: 4px; }
+    .modal-live-link { display: inline-flex; align-items: center; height: 30px; padding: 0 10px; border: 1px solid #e4e4e7; border-radius: 8px; color: #3f3f46; font-size: 11px; font-weight: 650; text-decoration: none; }
+    .modal-live-link:hover { background: #f4f4f5; color: #18181b; }
+    .modal-live-link[hidden] { display: none; }
+    .modal-visual.is-live-preview { background: #fff; }
+    .modal-visual.is-live-preview iframe { display: block; width: 100%; min-height: min(760px, calc(92vh - 54px)); border: 0; background: #fff; }
     @media (min-width: 701px) {
       .projects-section { width: min(100vw - 64px, 1320px); margin-left: calc((100% - min(100vw - 64px, 1320px)) / 2); }
       .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -49,6 +55,8 @@
       .modal-metric { padding: 9px 8px; }
       .modal-metric strong { font-size: 15px; }
       .modal-summary.has-metrics + .modal-visual { max-height: calc(95vh - 194px); }
+      .modal-live-link { padding: 0 8px; }
+      .modal-visual.is-live-preview iframe { min-height: min(680px, calc(95vh - 54px)); }
     }
   </style>
 </head>
@@ -193,7 +201,7 @@
           </div>
         </article>
 
-        <a class="project-card" href="https://pickitsme.com/mr/lentigo_evt_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 흑자 이벤트 랜딩페이지 열기" style="color:inherit;text-decoration:none">
+        <a class="project-card" href="https://pickitsme.com/mr/lentigo_evt_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 흑자 이벤트 랜딩페이지 열기" data-title="흑자 이벤트 랜딩페이지" data-live-key="itsmeHeukja" data-live-url="https://pickitsme.com/mr/lentigo_evt_01" style="color:inherit;text-decoration:none">
           <div class="project-media"><img src="./assets/thumbnails/itsme-lentigo.png" alt="잇츠미의원 대전 흑자 이벤트 랜딩페이지" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>흑자 이벤트 랜딩페이지</h3><time>Live · 잇츠미의원 대전</time></div><span class="arrow" aria-hidden="true">↗</span></div>
@@ -202,7 +210,7 @@
           </div>
         </a>
 
-        <a class="project-card" href="https://pickitsme.com/mr/onda_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 온다 리프팅 랜딩페이지 열기" style="color:inherit;text-decoration:none">
+        <a class="project-card" href="https://pickitsme.com/mr/onda_01" target="_blank" rel="noopener noreferrer" aria-label="잇츠미의원 대전 온다 리프팅 랜딩페이지 열기" data-title="온다 리프팅 랜딩페이지" data-live-key="itsmeOnda" data-live-url="https://pickitsme.com/mr/onda_01" style="color:inherit;text-decoration:none">
           <div class="project-media"><img src="./assets/thumbnails/itsme-onda.png" alt="잇츠미의원 대전 온다 리프팅 랜딩페이지" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>온다 리프팅 랜딩페이지</h3><time>Live · 잇츠미의원 대전</time></div><span class="arrow" aria-hidden="true">↗</span></div>
@@ -211,7 +219,7 @@
           </div>
         </a>
 
-        <a class="project-card" href="https://genobody.kr/postpartum" target="_blank" rel="noopener noreferrer" aria-label="제노바디 산후 리커버리 랜딩페이지 열기" style="color:inherit;text-decoration:none">
+        <a class="project-card" href="https://genobody.kr/postpartum" target="_blank" rel="noopener noreferrer" aria-label="제노바디 산후 리커버리 랜딩페이지 열기" data-title="제노바디 산후 리커버리 랜딩페이지" data-live-key="genobodyPostpartum" data-live-url="https://genobody.kr/postpartum" style="color:inherit;text-decoration:none">
           <div class="project-media"><img src="./assets/thumbnails/genobody-postpartum.png" alt="제노바디 웰니스센터 프리미엄 산후 리커버리 랜딩페이지" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>제노바디 산후 리커버리 랜딩페이지</h3><time>Live · 제노바디 웰니스센터</time></div><span class="arrow" aria-hidden="true">↗</span></div>
@@ -229,7 +237,7 @@
           </div>
         </article>
 
-        <a class="project-card" href="https://winawork.github.io/template/bodium/land_2405_01.html" target="_blank" rel="noopener noreferrer" aria-label="미스 바디움 브랜드 프로모션 열기" style="color:inherit;text-decoration:none">
+        <a class="project-card" href="https://winawork.github.io/template/bodium/land_2405_01.html" target="_blank" rel="noopener noreferrer" aria-label="미스 바디움 브랜드 프로모션 열기" data-title="미스 바디움 브랜드 프로모션" data-live-key="bodiumMiss" data-live-url="https://winawork.github.io/template/bodium/land_2405_01.html" style="color:inherit;text-decoration:none">
           <div class="project-media"><img src="https://winawork.github.io/images/miss_bodium.jpg" alt="바디움 미스유니버스 코리아 프로모션 랜딩페이지" /></div>
           <div class="project-body">
             <div class="project-top"><div><h3>미스 바디움 브랜드 프로모션</h3><time>Live · BODIUM</time></div><span class="arrow" aria-hidden="true">↗</span></div>
@@ -268,7 +276,10 @@
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-head">
         <strong id="modalTitle"></strong>
-        <button class="modal-close" type="button" aria-label="닫기">×</button>
+        <div class="modal-head-actions">
+          <a class="modal-live-link" id="modalLiveLink" target="_blank" rel="noopener noreferrer" hidden>새 탭 열기 ↗</a>
+          <button class="modal-close" type="button" aria-label="닫기">×</button>
+        </div>
       </div>
       <div class="modal-summary" id="modalSummary" hidden></div>
       <div class="modal-visual" id="modalVisual"></div>
@@ -280,6 +291,7 @@
     const modalVisual = document.getElementById('modalVisual');
     const modalTitle = document.getElementById('modalTitle');
     const modalSummary = document.getElementById('modalSummary');
+    const modalLiveLink = document.getElementById('modalLiveLink');
     const aboutSection = document.querySelector('.about-section');
     const aboutToggle = document.getElementById('aboutToggle');
     const numbers = (from, to) => Array.from({ length: to - from + 1 }, (_, index) => index + from);
@@ -357,6 +369,20 @@
       samsungWellstoryChefEdition: { summary: 'F&B 프로모션 · 키비주얼 · 메뉴 콘텐츠 · 매장 출력물' },
       philipsAutomotive: { summary: '제품 캠페인 · 배너 · 포스터 · 리플렛 디자인' },
     };
+    const liveProjectDetails = {
+      itsmeHeukja: {
+        summary: '색소 고민 고객을 위한 혜택 설계 · 시술 정보 · 상담 CTA',
+        metrics: [
+          { label: '매출', value: '1,600만 원' },
+          { label: '광고비', value: '200만 원' },
+          { label: 'ROAS', value: '800%' },
+        ],
+        metricNote: '캠페인 운영 성과',
+      },
+      itsmeOnda: { summary: '시술 원리 · 대상 · 혜택 · 상담 CTA를 연결한 의료 랜딩페이지' },
+      genobodyPostpartum: { summary: '회복 니즈 · 프로그램 안내 · 프로모션 CTA · 상담 신청 흐름' },
+      bodiumMiss: { summary: '브랜드 후원 · 공식 퀸 콘텐츠 · 고객 혜택을 연결한 프로모션 랜딩페이지' },
+    };
     const assetUrl = (path) => `./assets/${path.split('/').map(encodeURIComponent).join('/')}`;
     const closeModal = () => {
       modal.classList.remove('open');
@@ -366,11 +392,15 @@
       modalSummary.replaceChildren();
       modalSummary.hidden = true;
       modalSummary.classList.remove('has-metrics');
+      modalVisual.classList.remove('is-live-preview');
+      modalLiveLink.hidden = true;
+      modalLiveLink.removeAttribute('href');
     };
     const openModal = (card) => {
       modalTitle.textContent = card.dataset.title || '';
       const images = detailPages[card.dataset.gallery] || [];
-      const detail = projectDetails[card.dataset.gallery];
+      const liveUrl = card.dataset.liveUrl;
+      const detail = liveUrl ? liveProjectDetails[card.dataset.liveKey] : projectDetails[card.dataset.gallery];
       modalSummary.replaceChildren();
       modalSummary.hidden = !detail;
       modalSummary.classList.toggle('has-metrics', Boolean(detail?.metrics));
@@ -403,18 +433,35 @@
           modalSummary.append(metrics, note);
         }
       }
-      modalVisual.replaceChildren(...images.map((path, index) => {
-        const image = new Image();
-        image.src = assetUrl(path);
-        image.alt = `${card.dataset.title || '프로젝트'} 상세페이지 ${index + 1}`;
-        return image;
-      }));
+      modalVisual.classList.toggle('is-live-preview', Boolean(liveUrl));
+      if (liveUrl) {
+        const iframe = document.createElement('iframe');
+        iframe.src = liveUrl;
+        iframe.title = `${card.dataset.title || '프로젝트'} 라이브 페이지`;
+        iframe.loading = 'lazy';
+        modalVisual.replaceChildren(iframe);
+        modalLiveLink.href = liveUrl;
+        modalLiveLink.hidden = false;
+      } else {
+        modalVisual.replaceChildren(...images.map((path, index) => {
+          const image = new Image();
+          image.src = assetUrl(path);
+          image.alt = `${card.dataset.title || '프로젝트'} 상세페이지 ${index + 1}`;
+          return image;
+        }));
+      }
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
     };
     document.querySelectorAll('.project-card[data-gallery]').forEach((card) => {
       card.addEventListener('click', () => openModal(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+      });
+    });
+    document.querySelectorAll('.project-card[data-live-url]').forEach((card) => {
+      card.addEventListener('click', (e) => { e.preventDefault(); openModal(card); });
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
       });
