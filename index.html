@@ -30,8 +30,10 @@
     .modal-live-link { display: inline-flex; align-items: center; height: 30px; padding: 0 10px; border: 1px solid #e4e4e7; border-radius: 8px; color: #3f3f46; font-size: 11px; font-weight: 650; text-decoration: none; }
     .modal-live-link:hover { background: #f4f4f5; color: #18181b; }
     .modal-live-link[hidden] { display: none; }
-    .modal-visual.is-live-preview { background: #fff; }
-    .modal-visual.is-live-preview iframe { display: block; width: 100%; min-height: min(760px, calc(92vh - 54px)); border: 0; background: #fff; }
+    .modal-visual.is-live-preview { height: calc(92vh - 54px); max-height: none; overflow: hidden; background: #fff; }
+    .modal-summary:not([hidden]) + .modal-visual.is-live-preview { height: calc(92vh - 143px); }
+    .modal-summary.has-metrics + .modal-visual.is-live-preview { height: calc(92vh - 207px); }
+    .modal-visual.is-live-preview iframe { display: block; width: 100%; height: 100%; min-height: 0; border: 0; background: #fff; }
     @media (min-width: 701px) {
       .projects-section { width: min(100vw - 64px, 1320px); margin-left: calc((100% - min(100vw - 64px, 1320px)) / 2); }
       .project-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -56,7 +58,9 @@
       .modal-metric strong { font-size: 15px; }
       .modal-summary.has-metrics + .modal-visual { max-height: calc(95vh - 194px); }
       .modal-live-link { padding: 0 8px; }
-      .modal-visual.is-live-preview iframe { min-height: min(680px, calc(95vh - 54px)); }
+      .modal-visual.is-live-preview { height: calc(95vh - 54px); }
+      .modal-summary:not([hidden]) + .modal-visual.is-live-preview { height: calc(95vh - 136px); }
+      .modal-summary.has-metrics + .modal-visual.is-live-preview { height: calc(95vh - 194px); }
     }
   </style>
 </head>
