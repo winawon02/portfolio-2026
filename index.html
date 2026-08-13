@@ -169,6 +169,23 @@
             <div class="tags"><span>Landing Page</span><span>Medical Marketing</span><span>Web Design</span></div>
           </div>
         </a>
+        <article class="project-card" role="button" tabindex="0" data-title="E-CUBE SPA 런칭 제휴 이벤트" data-gallery="bodiumSamsung">
+          <div class="project-media"><img src="./assets/thumbnails/bodium-samsung.jpg" alt="바디움 E-CUBE SPA 런칭 제휴 이벤트 상세페이지" /></div>
+          <div class="project-body">
+            <div class="project-top"><div><h3>E-CUBE SPA 런칭 제휴 이벤트</h3><time>2024 · BODIUM</time></div><span class="arrow">↗</span></div>
+            <p>삼성 임직원 혜택과 제품 런칭의 이유를 한 페이지로 묶어, 브랜드 소개·기기 구성·이벤트 조건을 단계적으로 전달했습니다.</p>
+            <div class="tags"><span>Landing Page</span><span>Campaign</span><span>Content</span><span>Web Design</span></div>
+          </div>
+        </article>
+
+        <article class="project-card" role="button" tabindex="0" data-title="필립스 × GS오토오아시스 공동 프로모션" data-gallery="philipsAutooasis">
+          <div class="project-media"><img src="./assets/thumbnails/philips-autooasis.jpg" alt="필립스와 GS오토오아시스 공동 프로모션" /></div>
+          <div class="project-body">
+            <div class="project-top"><div><h3>필립스 × GS오토오아시스 공동 프로모션</h3><time>2020 · Philips Automotive</time></div><span class="arrow">↗</span></div>
+            <p>LED 헤드라이트 구매와 무상교체 혜택을 연결한 제휴 프로모션으로, 제품 정보와 현장 서비스의 전환 포인트를 함께 구성했습니다.</p>
+            <div class="tags"><span>Campaign</span><span>Partnership</span><span>Content</span><span>Web Design</span></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -208,6 +225,8 @@
       umbrella5: numbers(2, 12).map((number) => `umbrella-5/${String(number).padStart(2, '0')}.jpg`),
       umbrella3: numbers(3, 11).map((number) => `umbrella-3/${String(number).padStart(2, '0')}.jpg`),
       cleanbag: numbers(2, 16).map((number) => `cleanbag/${String(number).padStart(2, '0')}.jpg`),
+      bodiumSamsung: ['bodium-samsung/event.jpg'],
+      philipsAutooasis: numbers(1, 4).map((number) => `philips-autooasis/page-${String(number).padStart(2, '0')}.jpg`),
     };
     const assetUrl = (path) => `./assets/${path.split('/').map(encodeURIComponent).join('/')}`;
     const closeModal = () => {
